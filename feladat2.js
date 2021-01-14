@@ -1,15 +1,32 @@
-let num = Number.parseInt(window.prompt("Adj meg egy tetszőleges számot!"));
-let count = true;
-for (let i = 2; i < num; i++) {
-    if (num % i == 0) {
-        count = false;
+console.log(primKi(100))
+
+function primSzam(x) {
+    if (x < 2) {    // 2-nél kisebb számot kiszűri, a legkisebb pímszám a 2.
+        return false;
+    }
+    for (let i = 2; i < x; i++) {      // a ciklus kiszűri a nem prímszámokat.
+        if (x % i == 0 && x > 2) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function primKi(x) {
+    for (let i = 2; i <= x; i++) {  //a ciklus a legkissebb prímszámrol indul és még magát az x-et is vizsgálja.
+        if (primSzam(i)) {
+             console.log(i);
+        }
     }
 }
-if (count) {
-    window.alert("Ez egy prímszám.");
-} else {
-    window.alert("Ez nem egy primszám.");
-}
+
+
+
+
+
+
+
+
 
 
 
